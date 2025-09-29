@@ -16,7 +16,7 @@ public class Conta {
     Scanner lerS = new Scanner(System.in);
 
     
-    public Conta (Cliente cliente, int numero, double saldo, int senha, int agencia) {
+    public Conta (Cliente cliente, double saldo, int senha, int agencia) {
     
     	this.cliente = cliente;
 		this.agencia = agencia;
@@ -48,44 +48,30 @@ public class Conta {
 
   //Saque
     
-    private void Sacar() {
-    	 
-    	
-    	System.out.println("Digite o valor que gostaria de sacar: ");
-    	double valor = ler.nextDouble();
-    	
-    	if (valor <= this.saldo) {
-    		
-	    	System.out.println("Digite a senha:");
-	    	
-	    	int senha = ler.nextInt();
-    	
-		    	if (this.senha == senha){
-		    		
-		    		this.saldo -= valor;
-		    		
-		    		System.out.println("Saque realizado. Saldo atual:" + this.saldo);
-		    	
-		    	} else {
-		    		
-		    		System.out.println("Senha incorreta");
-		    		
-		    	}
-    	
-	    } else {
-	    		
-	    	System.out.println("Saldo insuficiente para essa transacao");
-	    		
-	    	}
+    public boolean saque(int senha, double valor) {
+        boolean confirma = false;
+        
+        if (this.senha == senha) {
+            if (this.saldo >= valor) {
+                this.saldo -= valor;
+                System.out.println("Saque realizado");
+                confirma = true;
+            } else {
+                System.out.println("Saldo insuficiente");
+            }
+        } else {
+            System.out.println("Senha inválida");
+        }
+
+        return confirma;
     }
 
     //Depósito
     
-    private void Depositar() {
+    private void Depositar(double valor) {
     	
     	
     	System.out.println("Digite o valor que gostaria de depositar: ");
-    	double valor = ler.nextDouble();
     	
     	if (valor > 0) {
     		
@@ -115,9 +101,28 @@ public class Conta {
 
     //Transferência
    
-    public void transferencia(Cliente c) {
+    public void transferencia(int senha, double valor, Conta c) {
 
+    	boolean conf = saque (senha, valor); 
     	
+    	if (conf) {
+    		c.Depositar(valor);
+    		System.out.println("Tranferencia realizada com sucesso");
+    	} else {
+    		System.out.println();
+    	}
+    	
+    }
+    
+    public void dadosCliente (int senha) {
+    	
+    	if(this.senha == senha) {
+    		System.out.println("Dados do cliente" + "\n" + "Nome: " + this.cliente.cliente + "\n" + "CPF: " + this.cliente.cpf + "\n" + "Telefone: " + this.cliente.telefone);
+    	} else {
+    		
+    		System.out.println("Senha incorreta");
+    		
+    	}
     	
     }
     
