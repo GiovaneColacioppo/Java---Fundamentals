@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Aula 03 - Encapsulamento/src"/>
+	<classpathentry kind="src" path="Aula_01/src"/>
+	<classpathentry kind="src" path="Aula_02 - Cliente_Objeto_Classe_Driver/src"/>
+	<classpathentry kind="src" path="Aula_04/src"/>
+	<classpathentry kind="src" path="Aula_05 - ParseInt/src"/>
+	<classpathentry kind="src" path="Aula_08 - Controle_Banc/src"/>
+	<classpathentry kind="src" path="Aula_09&amp;10/src"/>
+	<classpathentry kind="src" path="Aula_10 - Array/src"/>
+	<classpathentry kind="src" path="Aula11 - Dependencias/src"/>
+	<classpathentry kind="src" path="Aula12 - Jogo_Arena/src"/>
+	<classpathentry kind="src" path="Aula13 - Luta/src"/>
+	<classpathentry kind="src" path="Aula14 - TesteObjetos/src"/>
+	<classpathentry kind="src" path="Aula15 - IMCJOption - Copia/src"/>
+	<classpathentry kind="src" path="Aula15 - IMCJOption/src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
